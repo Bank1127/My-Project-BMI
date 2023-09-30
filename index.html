@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="bmi1.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BMI Calculator</title>
+  </head>
+  <body>
+    <div class="container-card">
+      <h1><img src="bmi1.png" alt="" style="width: 60px;position: relative;top: 15px;"> BMI Calculator</h1>
+      <div class="con-btn">
+        <button class="btn-1 active"><i class="fa-solid fa-person"></i></button>
+        <button class="btn-1 "><i class="fa-solid fa-person-dress"></i></button>
+      </div>
+      <input type="number" min="0" value="0" id="valueh"/>
+      <p>ส่วนสูง cm.</p>
+      <input type="range" value="0" max="250" id="rvalueh" /><span>0 cm.</span><span style="position:absolute;right: 80px;">250 cm.</span><br>
+      <input type="number" min="0" value="0" id="valuew"/>
+      <p>น้ำหนัก kg.</p>
+      <input type="range" value="0" max="250" id="rvaluew" /><span>0 kg.</span><span style="position:absolute;right: 80px;">250 kg.</span><br>
+      <button type="reset" class="btn2-1" onclick="clearvalue()">ล้างค่า</button>
+      <button type="submit" class="btn2-2" onclick="Apply()">คำนวณ</button>
+    </div>
+    <div class="display">
+        <h1>BMI Result</h1>
+        <p id="result">0</p>
+        <div id="man">
+          <p>ดัชนีมวลกายสำหรับผู้ชาย</p>
+        <table>
+            <tr>
+              <th>BMI kg./m2</th>
+              <th>อยู่ในเกณท์</th>
+              <th>ภาวะเสี่ยงต่อโรค</th>
+            </tr>
+            <tr>
+              <td>น้อยกว่า 18.50</td>
+              <td>น้ำหนักน้อย / ผอม</td>
+              <td>มากกว่าคนปกติ</td>
+            </tr>
+            <tr>
+              <td>ระหว่าง 18.5 - 24.9</td>
+              <td>ปกติ (สุขภาพดี)</td>
+              <td>ปกติ</td>
+            </tr>
+            <tr>
+              <td>ระหว่าง 25 - 29.9</td>
+              <td>ท้วม</td>
+              <td>เสี่ยง</td>
+            </tr>
+            <tr>
+              <td>ระหว่าง 30 - 34.9</td>
+              <td>โรคอ้วนระดับ 1</td>
+              <td>เสี่ยงมาก</td>
+            </tr>
+            <tr>
+              <td>35 - 39.9</td>
+              <td>โรคอ้วนระดับ 2</td>
+              <td>เสี่ยงมากและเข้าสู่เกณฑ์อันตราย</td>
+            </tr>
+            <tr>
+              <td>40 ขึ้นไป</td>
+              <td>โรคอ้วนระดับ 3</td>
+              <td>เสี่ยงอันตรายมาก</td>
+            </tr>
+          </table>
+        </div>
+          <div id="women">
+          <p>ดัชนีมวลกายสำหรับผู้หญิง</p>
+          <table>
+              <tr>
+                <th>BMI kg./m2</th>
+                <th>อยู่ในเกณท์</th>
+                <th>ภาวะเสี่ยงต่อโรค</th>
+              </tr>
+              <tr>
+                <td>น้อยกว่า 18.50</td>
+                <td>น้ำหนักน้อย / ผอม</td>
+                <td>มากกว่าคนปกติ</td>
+              </tr>
+              <tr>
+                <td>ระหว่าง 18.5 - 23.9</td>
+                <td>ปกติ (สุขภาพดี)</td>
+                <td>ปกติ</td>
+              </tr>
+              <tr>
+                <td>ระหว่าง 24 - 28.9</td>
+                <td>ท้วม</td>
+                <td>เสี่ยง</td>
+              </tr>
+              <tr>
+                <td>ระหว่าง 29 - 34.9</td>
+                <td>โรคอ้วนระดับ 1</td>
+                <td>เสี่ยงมาก</td>
+              </tr>
+              <tr>
+                <td>35 - 39.9</td>
+                <td>โรคอ้วนระดับ 2</td>
+                <td>เสี่ยงมากและเข้าสู่เกณฑ์อันตราย</td>
+              </tr>
+              <tr>
+                <td>40 ขึ้นไป</td>
+                <td>โรคอ้วนระดับ 3</td>
+                <td>เสี่ยงอันตรายมาก</td>
+              </tr>
+            </table>
+          </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
